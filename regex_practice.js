@@ -1,7 +1,8 @@
 const regexes = {
-  canadianPostalCode: /[^DFIOQU][A-Z]/g,
-  //   visa: _________,
-  //   masterCard: _________,
+  canadianPostalCode:
+    /^[^DFIOQU][A-Z][0-9][^DFIOQU][A-Z] ([0-9][^DFIOQU][A-Z][0-9])?$/,
+  visa: /^4(\d{15}|\d{12})$/,
+  masterCard: /^(51-55\d{14})|((2221-2720)(\d{12}))$/,
   //   adaFloat: _________,
   //   notThreeEndingInOO: _________,
   //   divisibleBy32: _________,
