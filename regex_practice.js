@@ -8,12 +8,13 @@ const regexes = {
   notThreeEndingInOO: /^(\p{L}(?![oO]{2}\b)\p{L}*)?$/u,
   divisibleBy32: /^0{1,4}$|^[01]*(?<=0{5,})$/,
   sevenThroughThirtyOne: /^[7-9]$|^[12]\d$|^3[01]$/,
-  mLComment: /^(\(\*).*?(\*\))$/,
+  mLComment: /^\(\*+\s?\S*\s?\*+\)$/,
   //   notFileForFirstNoLookAround: _________,
   //   notFileForFirstWithLookAround: _________,
-  //   cOctal: _________,
+  cOctal: /^0[0-7]*$/,
   //   restrictedFloatingPoint: _________,
-  //   palindrome2358: _________,
+  palindrome2358:
+    /^([.])\1$|^([.])([.])\1$|^([.])([.])([.])\2\1$|^([.])([.])([.])([.])\4\3\2\1$/u,
   //   noNegativeIntLits: _________,
   //   repeated: _________,
 };
