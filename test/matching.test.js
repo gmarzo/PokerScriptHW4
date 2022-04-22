@@ -50,41 +50,41 @@ const FIXTURE = {
   //     ],
   //     bad: ["dog", "4fe", "p#ii#", "_", "_33", "3_", "5__2", "9#88#E-1e3", "-6"],
   //   },
-  //   notThreeEndingInOO: {
-  //     good: ["", "fog", "Tho", "one", "a", "ab", "food", "ЂҋЍ"],
-  //     bad: ["fOo", "gOO", "HoO", "Фoo", "πOO", "1π3", "A15", "лOo"],
-  //   },
-  //   divisibleBy32: {
-  //     good: [
-  //       "0",
-  //       "00",
-  //       "000",
-  //       "00000",
-  //       "00000",
-  //       "000000",
-  //       "00000000",
-  //       "110100000",
-  //       "10010101000000",
-  //     ],
-  //     bad: ["1", "0000000010000", "1000000001", "dog0000000", "200000"],
-  //   },
-  //   sevenThroughThirtyOne: {
-  //     good: Array(24)
-  //       .fill(0)
-  //       .map((x, i) => i + 7),
-  //     bad: ["1", "0", "00003", "dog", "", "361", "90", "6", "-11", "32", "123z"],
-  //   },
-  //   mLComment: {
-  //     good: ["(**)", "(*  *)", "(*756****)", "(*****)", "(*(*(******9*)"],
-  //     bad: [
-  //       "",
-  //       "(*)",
-  //       "(**",
-  //       "dog",
-  //       "(* before (* inner *) after *)",
-  //       "(* extra space *) ",
-  //     ],
-  //   },
+  notThreeEndingInOO: {
+    good: ["", "fog", "Tho", "one", "a", "ab", "food", "ЂҋЍ"],
+    bad: ["fOo", "gOO", "HoO", "Фoo", "πOO", "1π3", "A15", "лOo"],
+  },
+  divisibleBy32: {
+    good: [
+      "0",
+      "00",
+      "000",
+      "00000",
+      "00000",
+      "000000",
+      "00000000",
+      "110100000",
+      "10010101000000",
+    ],
+    bad: ["1", "0000000010000", "1000000001", "dog0000000", "200000"],
+  },
+  sevenThroughThirtyOne: {
+    good: Array(24)
+      .fill(0)
+      .map((x, i) => i + 7),
+    bad: ["1", "0", "00003", "dog", "", "361", "90", "6", "-11", "32", "123z"],
+  },
+  mLComment: {
+    good: ["(**)", "(*  *)", "(*756****)", "(*****)", "(*(*(******9*)"],
+    bad: [
+      "",
+      "(*)",
+      "(**",
+      "dog",
+      "(* before (* inner *) after *)",
+      "(* extra space *) ",
+    ],
+  },
   notFileForFirstNoLookAround: {
     good: [
       "",
@@ -146,12 +146,12 @@ for (let name of Object.keys(FIXTURE)) {
   describe(`When matching ${name}`, () => {
     for (let s of FIXTURE[name].good) {
       it(`accepts ${s}`, () => {
-        console.log(assert.ok(matches(name, s)));
+        assert.ok(matches(name, s));
       });
     }
     for (let s of FIXTURE[name].bad) {
       it(`rejects ${s}`, () => {
-        console.log(assert.ok(!matches(name, s)));
+        assert.ok(!matches(name, s));
       });
     }
   });
