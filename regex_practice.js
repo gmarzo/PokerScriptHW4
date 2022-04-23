@@ -10,13 +10,13 @@ const regexes = {
   sevenThroughThirtyOne: /^[7-9]$|^[12]\d$|^3[01]$/,
   mLComment: /^\(\*+\s?\S*\s?\*+\)$/,
   //   notFileForFirstNoLookAround: _________,
-  //   notFileForFirstWithLookAround: _________,
+  notFileForFirstWithLookAround: /(?!file|for|first)(.*)/,
   cOctal: /^0[0-7]*$/,
-  //   restrictedFloatingPoint: _________,
+  restrictedFloatingPoint: /^\d+(\.\d*)?((E|e)(\+|\-)?\d{1,3})?$/,
   palindrome2358:
-    /^([.])\1$|^([.])([.])\1$|^([.])([.])([.])\2\1$|^([.])([.])([.])([.])\4\3\2\1$/u,
-  //   noNegativeIntLits: _________,
-  //   repeated: _________,
+    /^([^\p{C}\s])\1$|^([^\p{C}\s])([^\p{C}\s])\2$|^([^\p{C}\s])([^\p{C}\s])([^\p{C}\s])\5\4$|^([^\p{C}\s])([^\p{C}\s])([^\p{C}\s])([^\p{C}\s])\10\9\8\7$/u,
+  noNegativeIntLits: /^(.(?!\b\-))+$/,
+  repeated: /^([a-z]*)\1$/,
 };
 
 export function matches(name, string) {

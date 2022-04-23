@@ -122,21 +122,21 @@ const FIXTURE = {
     good: ["ππ", "©&©", "0@∂@0", "🔭ñabbañ🔭"],
     bad: ["Російський", "військовий", "корабель", "A", "BBBB", "#$%%$#"],
   },
-  // noNegativeIntLits: {
-  //   good: [
-  //     "12",
-  //     "7 dogs",
-  //     "I have 8 rats",
-  //     "Got response 404",
-  //     "hAx0r",
-  //     "What is 2-3?",
-  //   ],
-  //   bad: ["", "-3", "Shoot it was -16", "-2-2-2-2-2", "-420", "A -300 A"],
-  // },
-  // repeated: {
-  //   good: ["badbad", "", "wootwoot", "bebe", "swooshswoosh"],
-  //   bad: ["aba", "zzyzz", "ABAB", "ZooZ", "123123"],
-  // },
+  noNegativeIntLits: {
+    good: [
+      "12",
+      "7 dogs",
+      "I have 8 rats",
+      "Got response 404",
+      "hAx0r",
+      "What is 2-3?",
+    ],
+    bad: ["", "-3", "Shoot it was -16", "-2-2-2-2-2", "-420", "A -300 A"],
+  },
+  repeated: {
+    good: ["badbad", "", "wootwoot", "bebe", "swooshswoosh"],
+    bad: ["aba", "zzyzz", "ABAB", "ZooZ", "123123"],
+  },
 };
 
 // Looks funny, but you can probably figure out what it does
