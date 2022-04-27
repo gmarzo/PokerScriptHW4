@@ -16,7 +16,7 @@ const regexes = {
   restrictedFloatingPoint: /^\d+(\.\d*)?((E|e)(\+|\-)?\d{1,3})?$/,
   palindrome2358:
     /^([^\p{C}\s])\1$|^([^\p{C}\s])([^\p{C}\s])\2$|^([^\p{C}\s])([^\p{C}\s])([^\p{C}\s])\5\4$|^([^\p{C}\s])([^\p{C}\s])([^\p{C}\s])([^\p{C}\s])\10\9\8\7$/u,
-  noNegativeIntLits: /^((?<!\b\-).)+$/,
+  noNegativeIntLits: /^(?!(.*\B\-)+).+$/,
   repeated: /^([a-z]*)\1$/,
 };
 
